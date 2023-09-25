@@ -52,14 +52,6 @@ export default function NamesList() {
         value={lastName}
         placeholder="Last name"
       />
-      <label
-        onChange={handleThirdChange}
-        value={attending}
-        aria-label="<first name> <last name> attending status"
-      >
-        Attending
-        <input type="checkbox" />
-      </label>{' '}
       <br />
       <br />
       <button>Return</button>
@@ -69,13 +61,19 @@ export default function NamesList() {
       {users.map((user) => {
         return (
           <div key={`user-${user.id}`}>
-            {user.firstName} {user.lastName} (on if attending) {user.attending}
+            {user.firstName} {user.lastName}
+            <label
+              onChange={handleThirdChange}
+              value={attending}
+              aria-label="<first name> <last name> attending status"
+            >
+              Attending
+              <input type="checkbox" />
+            </label>{' '}
+            <button>Remove</button>
           </div>
         );
       })}
-      <br />
-      <br />
-      <button>Remove</button>
     </form>
   );
 }
