@@ -75,6 +75,7 @@ export default function NamesList() {
       })}
       <br />
       <br />
+      <button>Remove</button>
     </form>
   );
 }
